@@ -1,0 +1,55 @@
+NOP
+// ==============================================================================
+// PickAndPlace_P1-P2: pick a part from position P1 and place it at position P2
+// 12/2020
+// ==============================================================================
+// Align Gripper
+IF 1=0 THEN
+CALL JOB:Function_AlignGripper
+PAUSE
+ENDIF
+
+// 1. Select reference coordinates system: CART=base frame, TOOL#=tool frame, USER#=customized user frame
+CCOOD CART
+
+// 2. On the top menu bar:{Monitor}-->{Variable}-->{Var P}, activate P010,P011,P020,P021 (turn on the green light)
+// 3. Teach P010 and P020: {Change}-->{Update Point}
+// P010 - Pick Position | P020 - Place Position
+SETJOINT P010 20.3119,-93.1631,126.0813,-120.1218,91.4195,-73.7467,0.0000,0.0000
+SETJOINT P020 -25.3838,-90.9972,119.9539,-118.6022,90.8951,-76.8677,0.0000,0.0000
+
+// 3. Set the approach points LD010 and LD020:
+// LD010 - Approach Pick Position (Z offset relative to P010)
+SET LD010 100.0
+// LD020 - Approach Place Position (Z offset relative to P020)
+SET LD020 100.0
+
+
+// Initializations
+DOUT OT#(1) OFF
+PULSE OT#(2) T=0.50
+SET LP011 P010
+SET LP021 P020
+ADD LP011(2) LD010
+ADD LP021(2) LD020
+
+// Start Program
+LABEL *START
+// Move to pick position
+MOVJ LP011 VJ=100% PL=7
+MOVL P010 V=1000MM/S PL=7
+// Close gripper
+DOUT OT#(1) ON
+TIMER T=0.25
+MOVL LP011 V=1000MM/S PL=7
+
+// Move to place position
+MOVJ LP021 VJ=100% PL=7
+MOVL P020 V=1000MM/S PL=7
+// Open gripper
+DOUT OT#(1) OFF
+PULSE OT#(2) T=0.50
+MOVL LP021 V=1000MM/S PL=7
+PAUSE
+JUMP *START
+END

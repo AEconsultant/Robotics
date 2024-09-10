@@ -1,0 +1,29 @@
+NOP
+// ==============================================================================
+// Function_AlignGripper: Align the gripper with the closest plane
+// 12/2020
+// ==============================================================================
+
+GETPOS LP001
+CCOOD CART
+
+// Gripper Horizontal / Wrist Down
+IF LP001(3) < -135 | LP001(3) > 135 THEN
+	SET LP001(3) 180
+
+// Gripper Vertical / Wrist Up
+ELSEIF LP001(3) > 45 THEN
+	SET LP001(3) 90
+
+// Gripper Horizontal / Wrist Up
+ELSEIF LP001(3) > -45 THEN
+	SET LP001(3) 0
+
+// Gripper Vertical / Wrist Down
+ELSE
+	SET LP001(3) -90
+ENDIF
+SET LP001(4) 0
+
+MOVJ LP001 VJ=50% PL=0
+END

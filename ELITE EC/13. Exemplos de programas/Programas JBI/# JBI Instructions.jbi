@@ -1,0 +1,237 @@
+// ==============================================================================
+// ELITE ROBOT – Robótica Industrial Equinotec
+// Av. Villagarcia de Arosa, 1120
+// 4450-300 Matosinhos
+// T. +351 229 350 755 / T. +351 218 400 850 
+// Email: info@eliterobots.pt
+// 01/2022
+// ==============================================================================
+// 						     ELITE - JBI INSTRUCTIONS  
+// ==============================================================================
+ 
+// ========== Move Commands ==========
+
+// Joint Movement
+MOVJ VJ=100% PL=0
+MOVJ VJ=100% PL=0 ACC=1 DEC=1 UNTIL IN#(1)=1
+MOVJ VJ=B000 PL=7
+MOVJ P000 VJ=100% PL=0
+// Linear Movement
+MOVL V=1000MM/S PL=7
+MOVL VR=100DEG/S PL=0
+MOVL AV=1000.0MM/S PL=0
+MOVL AVR=100 PL=0
+MOVL P000 V=1000MM/S PL=0
+MOVL P000 V=I000 PL=0
+// Circular Arc Movement (Must be applied in a set of 3)
+MOVC P001 V=100MM/S PL=0 
+MOVC P000 AV=100MM/S
+// Circular Movement (Must be applied in a set of 3)
+MOVCA V=100MM/S POINT1 R=50.0MM DIR=CW DIST=30.0MM 
+// Drag Movement (Used to run programs of continuous points)
+MOVDRAG VJ=100% DRAGV=100% JOB:dragtest
+// Micro-segment interpolation
+MOVML VJ=100% M#(528) JOB:dragfile1
+
+
+// ========== I/O Instructions ==========
+
+// DOUT - Assigns the specified state to a specific Y signal
+DOUT OT#(1) ON  // OT#(Bit,0-1023) | OG#(Byte,0-255) | OGH#(HighByte,0-255)
+DOUT OT#(B001) ON
+// PULSE - Impulse operation of specific signals
+PULSE OT#(3) T=0.5
+// DIN - Get the specified input signal and pass to a designated variable
+DIN I001 OT#(1) // Assignment of OT#(1) to variable I001
+DIN I001 IN#(1) // Assignment of IN#(1) to variable I001
+// MOUT - Assigns the specified state to a specific M signal
+MOUT M#(528) ON // M#(528~1471), MG#(66~183), MGH#(132~367)
+// MIN - Get the specified M signal and pass to a designated variable
+MIN B000 M#(1)  // M#(0~1535), MG#(0~191), MGH#(0~767)
+// AOUT - Assign the specified value to the specified A0 signal
+AOUT AO#(1) 2.3 
+// AIN - Get the analog input port voltage and pass to a designated variable
+AIN D001 AI#(1.1) // Global and local variables D and LD are supported
+
+
+// ========== Control ==========
+
+// Set the coordinatec system (calculations takee into account the selected tool - TCP)
+CCOOD CART
+CCOOD JOINT
+CCOOD USER#(0)
+CCOOD TOOL#(0)
+
+// Branch Statement
+IF D000=0 & 1=1 THEN
+	// execute the statement block when exp1 is true
+ELSEIF D000=1 | 1=0 THEN
+	// execute the statement block when exp2 is true
+ELSE
+	// execute the statement block when other conditions are met
+ENDIF
+
+// While-Continue-Break
+WHILE LB000=0 DO
+	//exp loop the statement block when the expression is true
+	IF D000=0 THEN
+		BREAK
+	ELSE 
+		CONTINUE
+	ENDIF
+ENDWHILE
+
+// Jump-Label, Jump job|label [IF true]
+LABEL *L1
+// Jump can be followed by a tag name or a program name.
+JUMP JOB:1 IF B000=0 | B002=1
+// Add Code
+JUMP *L1 IF B000=1
+
+// Call-Ret , Call job|label [IF true], Ret [IF true]
+LABEL *L1
+// CALL can be followed by a tag name or a program name.
+CALL JOB:1 IF B000=0 | B002=1
+// Add Code
+CALL *L1 IF B000=1
+RET IF B001=0 
+
+// Pause without condition
+PAUSE 
+// Pause without condition
+PAUSE IF B001=2
+
+// Wait command
+WAIT IN#(3)=1 
+WAIT IN#(3)=1 T=3.0 
+
+// Timer
+TIMER T=1 // T=0~10000s
+
+// Disable Collision Detection function temporarily
+MCWAIT IN#(1)=1
+MCWAIT M#(0)=1 T=3.0 S=10
+
+// ========== Calculate ==========
+
+// Clear variables B000, B001, B002. All values are set to zero
+CLEAR B000 3 
+// INC - Variable value incremental (plus 1) instructions 
+INC B001
+// DEC - Variable value incremental (minus 1) instructions 
+DEC B001
+// ADD - addition instruction, variable #1 and variable #2
+ADD B001 5
+// SUB - subtraction instruction, variable #1 and variable #2
+SUB B001 5
+// MUL - multiplication instruction, variable #1 and variable #2
+MUL B001 5
+// DIV - division instruction, variable #1 and variable #2
+DIV B001 5
+// MOD - residual calculation of division variable #1 and variable #2
+MOD B001 3
+// AND - Bitwise and operation instruction
+AND B001 B002
+// OR - Bitwise or operation instruction
+OR B001 B002
+// NOT - Opposition operation instruction
+NOT B001 B002
+// XOR - Different or operation instruction
+XOR B001 B002
+// MFRAME - Create user coordinate system command (P001-RORG,P002-RXX,P003-RXY)
+MFRAME USER#(1) P001 P002 P003
+// DIST - Calculate the distance between two giving points (P000,LP001). D000 save the result
+DIST D000 P000 LP001 // Variable to save the result, can be of type D or LD
+
+
+// ========== Assignment ==========
+
+// SET - Variable assignment instruction. Assign value of var #2 to var #1 
+SET I000 1000
+SET P001(2) 60
+// SETJOINT - Joint position assignment instruction
+SETJOINT P005 0.0,-90.0,90.0,-90.0,90.0,0.0,0.0,0.0
+// SETPOSE - Spatial position assignment instruction
+SETPOSE V000 500,100,400,3.1416,0,0 	// 180º = Pi rad = 3.1416
+// GETPOS - Get current joint position and assign it to a designated P variable
+GETPOS P005
+// GETTOOLFRAME - Get a specific tool frame and save to a Cartesian Pose V variable
+GETTOOLFRAME V006 TOOL#(3)
+// GETUSERFRAME - Get a specific user frame and save to a Cartesian Pose V variable
+GETUSERFRAME V009 USER#(5)
+// SETTOOLFRAME - Set the value of the V variable to the tool frame
+SETTOOLFRAME TOOL#(0) V000
+// SETUSERFRAME - Set the value of the V variable to the user frame
+SETUSERFRAME USER#(0) V000
+
+// ========== Special Commands ==========
+
+// POSEMUL - Positional multiplication instruction. Append V002 to V001 as a spatial offset
+POSEMUL V001 V002
+// POSETOJOINT - Convert Cartesian pose to joint position
+POSETOJOINT V001 P001
+// JOINTTOPOSE - Convert joint position to Cartesian pose
+JOINTTOPOSE P005 V005
+// TTINT - Initialize transparent transformation process
+TTINIT T=0.004S LOOKAHEAD=0.1S GAIN=2000 // T=0.001~10, LOOKAHEAD=0.003~0.2, GAIN=1000~2000
+// TTSTARTJOINT - Transparent transformation start position. Default as current position
+TTSTARTJOINT P001
+// TTTARGETJOINT - Next target position in transparent transformation process
+TTTARGETJOINT P002
+// TTSTOP - Transparent transformation ends
+TTSTOP
+// Will preload the executed file into memory, reducing time when running MOVML instructions
+LOADML JOB:dragfile1
+UNLOADML JOB:dragfile1
+
+// ========== Script Instruction ==========
+// STARTLUA - Run a specific LUA script file
+STARTLUA INDEX=1
+// STOPLUA - Stop a specific LUA script file
+STOPLUA INDEX=1
+// RESTARTLUA - Reload and run a specific LUA script file
+RESTARTLUA INDEX=3
+// GETLUASTATE - Get a specific script file state: 0=stopped,1=running
+GETLUASTATE B000 INDEX=1
+
+	
+// ========== Others ==========
+
+// SAVEVARP - Save all P variables once
+SAVEVARP
+// TPWRITE - Print command in the information window and record in the log file (text without spaces)
+TPWRITE ABCDEF
+// SETPAYLOAD - Set the load and centroid of the tool 
+SETPAYLOAD TOOL#(0) M=5.0KG X=20.0MM Y=30.0MM Z=40.0MM
+// Declaration of Local Positions (before NOP instruction)
+C00000=0.0000,-90.0000,0.0000,0.0000,90.0000,0.0000,0.0000,0.0000
+// First and last line of program
+NOP
+END
+
+
+// ==============================================================================
+// ==============================================================================
+// ========== EXAMPLES ==========
+
+// Set Position Coordinates
+// 1. Joint Coordinates
+CCOOD JOINT 	
+SET P001(0) 0	// degrees
+SET P001(1) -90	// degrees
+SET P001(2) 90	// degrees
+SET P001(3) -90	// degrees
+SET P001(4) 90	// degrees
+SET P001(5) -90	// degrees
+
+// 2. Cartesian Coordinates
+CCOOD CART		
+SET P001(0) 496		// mm
+SET P001(1) 122		// mm
+SET P001(2) 424.5	// mm
+SET P001(3) 180		// degrees
+SET P001(4) 0		// degrees
+SET P001(5) 0		// degrees
+
+
+

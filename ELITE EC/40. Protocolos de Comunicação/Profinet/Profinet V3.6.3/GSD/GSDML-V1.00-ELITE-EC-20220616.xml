@@ -1,0 +1,1430 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.4.xsd">
+   <!-- ProfileHeader definition as defined in ISO 15745-1. Please do not change the content. -->
+   <ProfileHeader>
+      <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+      <ProfileRevision>1.00</ProfileRevision>
+      <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+      <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+      <ProfileClassID>Device</ProfileClassID>
+      <ISO15745Reference>
+         <ISO15745Part>4</ISO15745Part>
+         <ISO15745Edition>1</ISO15745Edition>
+         <ProfileTechnology>GSDML</ProfileTechnology>
+      </ISO15745Reference>
+   </ProfileHeader>
+   <ProfileBody>
+      <DeviceIdentity VendorID="0xFFFF" DeviceID="0xEEEE">
+         <InfoText TextId="DEVICE_INFO"/>
+         <VendorName Value="ELITE"/>
+      </DeviceIdentity>
+      <DeviceFunction>
+         <Family MainFamily="I/O" ProductFamily="Elite Robot EC Device"/>
+      </DeviceFunction>
+      <ApplicationProcess>
+         <DeviceAccessPointList>
+            <DeviceAccessPointItem ID="IDD_1" PNIO_Version="V2.4" PhysicalSlots="0..11" ModuleIdentNumber="0x00000001" MinDeviceInterval="32" DNS_CompatibleName="elite-dev" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="false" MultipleWriteSupported="true" CheckDeviceID_Allowed="true" NameOfStationNotTransferable="false" LLDP_NoD_Supported="true" ResetToFactoryModes="1..2">
+               <ModuleInfo>
+                  <Name TextId="MOUDLE_NAME"/>
+                  <InfoText TextId="MOUDLE_INFO"/>
+                  <VendorName Value="ELITE"/>
+                  <OrderNumber Value="ELITE 2014"/>
+                  <HardwareRelease Value="A1.0"/>
+                  <SoftwareRelease Value="V0.1.0"/>
+               </ModuleInfo>
+               <CertificationInfo ConformanceClass="B" ApplicationClass="" NetloadClass="I"/>
+               <IOConfigData MaxInputLength="1440" MaxOutputLength="1440"/>
+               <UseableModules>
+                  <ModuleItemRef ModuleItemTarget="1" AllowedInSlots="1"/>
+                  <ModuleItemRef ModuleItemTarget="2" AllowedInSlots="2"/>
+                  <ModuleItemRef ModuleItemTarget="3" AllowedInSlots="1"/>
+                  <ModuleItemRef ModuleItemTarget="4" AllowedInSlots="2"/>
+                  <ModuleItemRef ModuleItemTarget="5" AllowedInSlots="1"/>
+                  <ModuleItemRef ModuleItemTarget="6" AllowedInSlots="2"/>
+                  <ModuleItemRef ModuleItemTarget="7" AllowedInSlots="1"/>
+                  <ModuleItemRef ModuleItemTarget="8" AllowedInSlots="2"/>
+                  <ModuleItemRef ModuleItemTarget="9" AllowedInSlots="3"/>
+                  <ModuleItemRef ModuleItemTarget="10" AllowedInSlots="4"/>
+                  <ModuleItemRef ModuleItemTarget="11" AllowedInSlots="3"/>
+                  <ModuleItemRef ModuleItemTarget="12" AllowedInSlots="4"/>
+                  <ModuleItemRef ModuleItemTarget="13" AllowedInSlots="3"/>
+                  <ModuleItemRef ModuleItemTarget="14" AllowedInSlots="4"/>
+                  <ModuleItemRef ModuleItemTarget="15" AllowedInSlots="5"/>
+                  <ModuleItemRef ModuleItemTarget="16" AllowedInSlots="6"/>
+                  <ModuleItemRef ModuleItemTarget="17" AllowedInSlots="5"/>
+                  <ModuleItemRef ModuleItemTarget="18" AllowedInSlots="6"/>
+                  <ModuleItemRef ModuleItemTarget="19" AllowedInSlots="5"/>
+                  <ModuleItemRef ModuleItemTarget="20" AllowedInSlots="6"/>
+                  <ModuleItemRef ModuleItemTarget="21" AllowedInSlots="7"/>
+                  <ModuleItemRef ModuleItemTarget="22" AllowedInSlots="8"/>
+                  <ModuleItemRef ModuleItemTarget="23" AllowedInSlots="9"/>
+                  <ModuleItemRef ModuleItemTarget="24" AllowedInSlots="10"/>
+                  <ModuleItemRef ModuleItemTarget="25" AllowedInSlots="11"/>
+               </UseableModules>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="IDS_1" SubmoduleIdentNumber="0x00000001" Writeable_IM_Records="1 2 3" MayIssueProcessAlarm="false">
+                     <IOData/>
+                     <ModuleInfo>
+                        <Name TextId="MOUDLE_NAME"/>
+                        <InfoText TextId="MOUDLE_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+               <SystemDefinedSubmoduleList>
+                  <InterfaceSubmoduleItem ID="IDS_I" SubmoduleIdentNumber="0x00008000" SubslotNumber="32768" TextId="IDT_NAME" SupportedRT_Classes="RT_CLASS_1" SupportedProtocols="SNMP;LLDP" NetworkComponentDiagnosisSupported="false" PTP_BoundarySupported="true" DCP_BoundarySupported="true">
+                     <ApplicationRelations StartupMode="Advanced">
+                        <TimingProperties SendClock="256" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+                     </ApplicationRelations>
+                  </InterfaceSubmoduleItem>
+                  <PortSubmoduleItem ID="IDS_P1" SubmoduleIdentNumber="0x00008001" SubslotNumber="32769" TextId="IDT_NAME_PS1" MaxPortRxDelay="350" MaxPortTxDelay="160">
+                     <MAUTypeList>
+                        <MAUTypeItem Value="30"/>
+                        <MAUTypeItem Value="16"/>
+                        <MAUTypeItem Value="5"/>
+                     </MAUTypeList>
+                  </PortSubmoduleItem>
+               </SystemDefinedSubmoduleList>
+               <Graphics>
+                  <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="Elite_EC_Slave_Image" />
+               </Graphics>
+            </DeviceAccessPointItem>
+         </DeviceAccessPointList>
+         <ModuleList>
+            <ModuleItem ID="1" ModuleIdentNumber="0x00000030">
+               <ModuleInfo>
+                  <Name TextId="MIN_64Byte"/>
+                  <InfoText TextId="MIN_64Byte_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_130" SubmoduleIdentNumber="0x0130" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Output>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                        </Output>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="123" Length="2">
+                           <Name TextId="TitleParameter2"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param1"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="MIN_64Byte"/>
+                        <InfoText TextId="MIN_64Byte_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="2" ModuleIdentNumber="0x00000031">
+               <ModuleInfo>
+                  <Name TextId="MOUT_64Byte"/>
+                  <InfoText TextId="MOUT_64Byte_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_131" SubmoduleIdentNumber="0x0131" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Input>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                        </Input>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="124" Length="2">
+                           <Name TextId="TitleParameter1"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param2"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="MOUT_64Byte"/>
+                        <InfoText TextId="MOUT_64Byte_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="3" ModuleIdentNumber="0x00000032">
+               <ModuleInfo>
+                  <Name TextId="MIN_32Byte"/>
+                  <InfoText TextId="MIN_32Byte_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_132" SubmoduleIdentNumber="0x0132" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Output>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                        </Output>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="123" Length="2">
+                           <Name TextId="TitleParameter2"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param1"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="MIN_32Byte"/>
+                        <InfoText TextId="MIN_32Byte_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="4" ModuleIdentNumber="0x00000033">
+               <ModuleInfo>
+                  <Name TextId="MOUT_32Byte"/>
+                  <InfoText TextId="MOUT_32Byte_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_133" SubmoduleIdentNumber="0x0133" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Input>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                        </Input>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="124" Length="2">
+                           <Name TextId="TitleParameter1"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param2"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="MOUT_32Byte"/>
+                        <InfoText TextId="MOUT_32Byte_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="5" ModuleIdentNumber="0x00000034">
+               <ModuleInfo>
+                  <Name TextId="MIN_16Byte"/>
+                  <InfoText TextId="MIN_16Byte_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_134" SubmoduleIdentNumber="0x0134" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Output>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                        </Output>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="123" Length="2">
+                           <Name TextId="TitleParameter2"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param1"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="MIN_16Byte"/>
+                        <InfoText TextId="MIN_16Byte_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="6" ModuleIdentNumber="0x00000035">
+               <ModuleInfo>
+                  <Name TextId="MOUT_16Byte"/>
+                  <InfoText TextId="MOUT_16Byte_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_135" SubmoduleIdentNumber="0x0135" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Input>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                        </Input>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="124" Length="2">
+                           <Name TextId="TitleParameter1"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param2"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="MOUT_16Byte"/>
+                        <InfoText TextId="MOUT_16Byte_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="7" ModuleIdentNumber="0x00000036">
+               <ModuleInfo>
+                  <Name TextId="MIN_8Byte"/>
+                  <InfoText TextId="MIN_8Byte_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_136" SubmoduleIdentNumber="0x0136" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Output>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MIN_Byte_DataItem"/>
+                        </Output>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="123" Length="2">
+                           <Name TextId="TitleParameter2"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param1"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="MIN_8Byte"/>
+                        <InfoText TextId="MIN_8Byte_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="8" ModuleIdentNumber="0x00000037">
+               <ModuleInfo>
+                  <Name TextId="MOUT_8Byte"/>
+                  <InfoText TextId="MOUT_8Byte_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_137" SubmoduleIdentNumber="0x0137" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Input>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                           <DataItem DataType="Unsigned8" TextId="MOUT_Byte_DataItem"/>
+                        </Input>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="124" Length="2">
+                           <Name TextId="TitleParameter1"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param2"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="MOUT_8Byte"/>
+                        <InfoText TextId="MOUT_8Byte_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="9" ModuleIdentNumber="0x00000038">
+               <ModuleInfo>
+                  <Name TextId="RIN_32Int"/>
+                  <InfoText TextId="RIN_32Int_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_138" SubmoduleIdentNumber="0x0138" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Output>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                        </Output>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="123" Length="2">
+                           <Name TextId="TitleParameter2"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param1"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="RIN_32Int"/>
+                        <InfoText TextId="RIN_32Int_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="10" ModuleIdentNumber="0x00000039">
+               <ModuleInfo>
+                  <Name TextId="ROUT_32Int"/>
+                  <InfoText TextId="ROUT_32Int_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_139" SubmoduleIdentNumber="0x0139" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Input>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                        </Input>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="124" Length="2">
+                           <Name TextId="TitleParameter1"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param2"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="ROUT_32Int"/>
+                        <InfoText TextId="ROUT_32Int_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="11" ModuleIdentNumber="0x0000003A">
+               <ModuleInfo>
+                  <Name TextId="RIN_16Int"/>
+                  <InfoText TextId="RIN_16Int_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_13A" SubmoduleIdentNumber="0x013A" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Output>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                        </Output>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="123" Length="2">
+                           <Name TextId="TitleParameter2"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param1"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="RIN_16Int"/>
+                        <InfoText TextId="RIN_16Int_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="12" ModuleIdentNumber="0x0000003B">
+               <ModuleInfo>
+                  <Name TextId="ROUT_16Int"/>
+                  <InfoText TextId="ROUT_16Int_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_13B" SubmoduleIdentNumber="0x013B" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Input>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                        </Input>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="124" Length="2">
+                           <Name TextId="TitleParameter1"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param2"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="ROUT_32Int"/>
+                        <InfoText TextId="ROUT_32Int_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="13" ModuleIdentNumber="0x0000003C">
+               <ModuleInfo>
+                  <Name TextId="RIN_8Int"/>
+                  <InfoText TextId="RIN_8Int_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_13C" SubmoduleIdentNumber="0x013C" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Output>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_INT_DataItem"/>
+                        </Output>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="123" Length="2">
+                           <Name TextId="TitleParameter2"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param1"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="RIN_8Int"/>
+                        <InfoText TextId="RIN_8Int_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="14" ModuleIdentNumber="0x0000003D">
+               <ModuleInfo>
+                  <Name TextId="ROUT_8Int"/>
+                  <InfoText TextId="ROUT_8Int_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_13D" SubmoduleIdentNumber="0x013D" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Input>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_INT_DataItem"/>
+                        </Input>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="124" Length="2">
+                           <Name TextId="TitleParameter1"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param2"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="ROUT_8Int"/>
+                        <InfoText TextId="ROUT_8Int_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="15" ModuleIdentNumber="0x0000003E">
+               <ModuleInfo>
+                  <Name TextId="RIN_32Float"/>
+                  <InfoText TextId="RIN_32Float"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_13E" SubmoduleIdentNumber="0x013E" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Output>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                        </Output>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="123" Length="2">
+                           <Name TextId="TitleParameter2"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param1"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="RIN_32Float"/>
+                        <InfoText TextId="RIN_32Float"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="16" ModuleIdentNumber="0x0000003F">
+               <ModuleInfo>
+                  <Name TextId="ROUT_32Float"/>
+                  <InfoText TextId="ROUT_32Float_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_13F" SubmoduleIdentNumber="0x013F" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Input>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                        </Input>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="124" Length="2">
+                           <Name TextId="TitleParameter1"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param2"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="ROUT_32Float"/>
+                        <InfoText TextId="ROUT_32Float_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="17" ModuleIdentNumber="0x00000040">
+               <ModuleInfo>
+                  <Name TextId="RIN_16Float"/>
+                  <InfoText TextId="RIN_16Float_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_140" SubmoduleIdentNumber="0x0140" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Output>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                        </Output>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="123" Length="2">
+                           <Name TextId="TitleParameter2"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param1"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="RIN_16Float"/>
+                        <InfoText TextId="RIN_16Float_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="18" ModuleIdentNumber="0x00000041">
+               <ModuleInfo>
+                  <Name TextId="ROUT_16Float"/>
+                  <InfoText TextId="ROUT_16Float_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_141" SubmoduleIdentNumber="0x0141" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Input>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                        </Input>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="123" Length="2">
+                           <Name TextId="TitleParameter2"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param1"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="ROUT_32Float"/>
+                        <InfoText TextId="ROUT_32Float_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="19" ModuleIdentNumber="0x00000042">
+               <ModuleInfo>
+                  <Name TextId="RIN_8Float"/>
+                  <InfoText TextId="RIN_8Float_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_142" SubmoduleIdentNumber="0x0142" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Output>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="RIN_Float_DataItem"/>
+                        </Output>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="123" Length="2">
+                           <Name TextId="TitleParameter2"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param1"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="RIN_8Float"/>
+                        <InfoText TextId="RIN_8Float_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="20" ModuleIdentNumber="0x00000043">
+               <ModuleInfo>
+                  <Name TextId="ROUT_8Float"/>
+                  <InfoText TextId="ROUT_8Float_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_143" SubmoduleIdentNumber="0x0143" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Input>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="ROUT_Float_DataItem"/>
+                        </Input>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="124" Length="2">
+                           <Name TextId="TitleParameter1"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param2"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="ROUT_8Float"/>
+                        <InfoText TextId="ROUT_8Float_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="21" ModuleIdentNumber="0x00000044">
+               <ModuleInfo>
+                  <Name TextId="Status_Motion"/>
+                  <InfoText TextId="Status_Motion"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_144" SubmoduleIdentNumber="0x0144" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Input>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                        </Input>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="123" Length="2">
+                           <Name TextId="TitleParameter1"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param1"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="Status_Motion"/>
+                        <InfoText TextId="Status_Motion"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="22" ModuleIdentNumber="0x00000045">
+               <ModuleInfo>
+                  <Name TextId="Status_DIO"/>
+                  <InfoText TextId="Status_DIO_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_145" SubmoduleIdentNumber="0x0145" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Input>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                        </Input>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="123" Length="2">
+                           <Name TextId="TitleParameter1"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param1"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="Status_DIO"/>
+                        <InfoText TextId="Status_DIO_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="23" ModuleIdentNumber="0x00000046">
+               <ModuleInfo>
+                  <Name TextId="Status_AIO"/>
+                  <InfoText TextId="Status_AIO_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_146" SubmoduleIdentNumber="0x0146" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Input>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                        </Input>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="123" Length="2">
+                           <Name TextId="TitleParameter1"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param1"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="Status_AIO"/>
+                        <InfoText TextId="Status_AIO_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="24" ModuleIdentNumber="0x00000047">
+               <ModuleInfo>
+                  <Name TextId="Status_SafetyParams"/>
+                  <InfoText TextId="Status_SafetyParams_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_147" SubmoduleIdentNumber="0x0147" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Input>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                        </Input>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="123" Length="2">
+                           <Name TextId="TitleParameter1"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param1"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="Status_SafetyParams"/>
+                        <InfoText TextId="Status_SafetyParams_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+            <ModuleItem ID="25" ModuleIdentNumber="0x00000048">
+               <ModuleInfo>
+                  <Name TextId="Status_Other_reg"/>
+                  <InfoText TextId="Status_Other_reg_INFO"/>
+                  <HardwareRelease Value="1.0"/>
+                  <SoftwareRelease Value="1.0"/>
+               </ModuleInfo>
+               <VirtualSubmoduleList>
+                  <VirtualSubmoduleItem ID="SM_148" SubmoduleIdentNumber="0x0148" MayIssueProcessAlarm="true">
+                     <IOData>
+                        <Input>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+						   <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                           <DataItem DataType="Unsigned32" TextId="Status_Input_DataItem"/>
+                        </Input>
+                     </IOData>
+                     <RecordDataList>
+                        <ParameterRecordDataItem Index="123" Length="2">
+                           <Name TextId="TitleParameter1"/>
+                           <Ref DataType="Unsigned16" ByteOffset="0" DefaultValue="32768" AllowedValues="32768..65535" Changeable="true" Visible="true" TextId="Param1"/>
+                        </ParameterRecordDataItem>
+                     </RecordDataList>
+                     <ModuleInfo>
+                        <Name TextId="Status_Other_reg"/>
+                        <InfoText TextId="Status_Other_reg_INFO"/>
+                     </ModuleInfo>
+                  </VirtualSubmoduleItem>
+               </VirtualSubmoduleList>
+            </ModuleItem>
+         </ModuleList>
+         <LogBookEntryList>
+            <LogBookEntryItem Status="2130510">
+               <!--Custom log book entry for sample application-->
+               <!--Error code 0x20  Error decode 0x82  Error code 1 0x4E-->
+               <ErrorCode2Value>
+                  <Name TextId="IDT_CUSTOM_LOGBOOK_1"/>
+               </ErrorCode2Value>
+            </LogBookEntryItem>
+         </LogBookEntryList>
+         <GraphicsList>
+            <GraphicItem ID="Elite_EC_Slave_Image" GraphicFile="ELITE-ProfinetSlave" />
+         </GraphicsList>
+         <ExternalTextList>
+            <PrimaryLanguage>
+                <Text TextId="DEVICE_INFO" Value="https://www.elibot.cn/"/>
+                <Text TextId="MOUDLE_NAME" Value="Elite Robot EC Device"/>
+                <Text TextId="MOUDLE_INFO" Value="Elite Robot EC Device https://www.elibot.cn/"/>
+                <Text TextId="IDT_CUSTOM_DIAG_1" Value="Custom diagnosis in USI format"/>
+                <Text TextId="IDT_CUSTOM_DIAG_1_VALUE" Value="Custom diagnosis value"/>
+                <Text TextId="IDT_CUSTOM_LOGBOOK_1" Value="Custom Logbook entry"/>
+
+                <Text TextId="IDT_NAME" Value="EC"/>
+                <Text TextId="IDT_NAME_PS1" Value="EC P1"/>
+                <Text TextId="IDT_NAME_PS2" Value="EC P2"/>
+                <!--module name-->
+                <Text TextId="MIN_64Byte" Value="MIN_64Byte"/>
+                <Text TextId="MOUT_64Byte" Value="MOUT_64Byte"/>
+                <Text TextId="MIN_32Byte" Value="MIN_32Byte"/>
+                <Text TextId="MOUT_32Byte" Value="MOUT_32Byte"/>
+                <Text TextId="MIN_16Byte" Value="MIN_16Byte"/>
+                <Text TextId="MOUT_16Byte" Value="MOUT_16Byte"/>
+                <Text TextId="MIN_8Byte" Value="MIN_8Byte"/>
+                <Text TextId="MOUT_8Byte" Value="MOUT_8Byte"/>
+                <Text TextId="RIN_32Int" Value="RIN_32Int"/>
+                <Text TextId="ROUT_32Int" Value="ROUT_32Int"/>
+                <Text TextId="RIN_16Int" Value="RIN_16Int"/>
+                <Text TextId="ROUT_16Int" Value="ROUT_16Int"/>
+                <Text TextId="RIN_8Int" Value="RIN_8Int"/>
+                <Text TextId="ROUT_8Int" Value="ROUT_8Int"/>
+                <Text TextId="RIN_32Float" Value="RIN_32Float"/>
+                <Text TextId="ROUT_32Float" Value="ROUT_32Float"/>
+                <Text TextId="RIN_16Float" Value="RIN_16Float"/>
+                <Text TextId="ROUT_16Float" Value="ROUT_16Float"/>
+                <Text TextId="RIN_8Float" Value="RIN_8Float"/>
+                <Text TextId="ROUT_8Float" Value="ROUT_8Float"/>
+                <Text TextId="Status_Motion" Value="Status_Motion"/>
+                <Text TextId="Status_DIO" Value="Status_DIO"/>
+                <Text TextId="Status_AIO" Value="Status_AIO"/>
+                <Text TextId="Status_SafetyParams" Value="Status_SafetyParams"/>
+                <Text TextId="Status_Other_reg" Value="Status_other"/>
+                <!--module info -->
+                <Text TextId="MIN_64Byte_INFO" Value="Output 64 byte M value"/>
+                <Text TextId="MOUT_64Byte_INFO" Value="Input 64 byte M value"/>
+                <Text TextId="MIN_32Byte_INFO" Value="Output 32 byte M value"/>
+                <Text TextId="MOUT_32Byte_INFO" Value="Input 32 byte M value"/>
+                <Text TextId="MIN_16Byte_INFO" Value="Output 16 byte M value"/>
+                <Text TextId="MOUT_16Byte_INFO" Value="Input 16 byte M value"/>
+                <Text TextId="MIN_8Byte_INFO" Value="Output 8 byte M value "/>
+                <Text TextId="MOUT_8Byte_INFO" Value="Input 8 byte M value"/>
+                <Text TextId="RIN_32Int_INFO" Value="Output 32 Int register"/>
+                <Text TextId="ROUT_32Int_INFO" Value="Input 32 Int register"/>
+                <Text TextId="RIN_16Int_INFO" Value="Output 32 Int register"/>
+                <Text TextId="ROUT_16Int_INFO" Value="Input 32 Int register"/>
+                <Text TextId="RIN_8Int_INFO" Value="Output 32 Int register"/>
+                <Text TextId="ROUT_8Int_INFO" Value="Input 32 Int register"/>
+                <Text TextId="RIN_32Float_INFO" Value="Output 32 float register"/>
+                <Text TextId="ROUT_32Float_INFO" Value="Input 32 float register"/>
+                <Text TextId="RIN_16Float_INFO" Value="Output 16 float register"/>
+                <Text TextId="ROUT_16Float_INFO" Value="Input 16 float register"/>
+                <Text TextId="RIN_8Float_INFO" Value="Output 8 float register"/>
+                <Text TextId="ROUT_8Float_INFO" Value="Input 8 float register"/>
+                <Text TextId="Status_Motion_INFO" Value="Input 64 mostion status register"/>
+                <Text TextId="Status_DIO_INFO" Value="Input 4 digital IO status register"/>
+                <Text TextId="Status_AIO_INFO" Value="Input 8 analog IO status register"/>
+                <Text TextId="Status_SafetyParams_INFO" Value="Input 24 SafetyParams status register"/>
+                <Text TextId="Status_Other_reg_INFO" Value="Input 32 other status register"/>
+                <!--dataitem name-->
+                <Text TextId="MIN_Byte_DataItem" Value="Output byte M value"/>
+                <Text TextId="MOUT_Byte_DataItem" Value="Input byte M value"/>
+
+                <Text TextId="RIN_INT_DataItem" Value="Output Int register"/>
+                <Text TextId="ROUT_INT_DataItem" Value="Input Int register"/>
+                <Text TextId="RIN_Float_DataItem" Value="Output fkoat register"/>
+                <Text TextId="ROUT_Float_DataItem" Value="Input float register"/>
+                <Text TextId="Status_Input_DataItem" Value="Input status register"/>
+                <!--ParameterRecordDataItem name-->
+                <Text TextId="TitleParameter1" Value="Parameter 1"/>
+                <Text TextId="TitleParameter2" Value="Parameter 2"/>
+                <Text TextId="Param1" Value="Modbus Input  StartAddr"/>
+                <Text TextId="Param2" Value="Modbus Output StartAddr"/>
+            </PrimaryLanguage>
+         </ExternalTextList>
+      </ApplicationProcess>
+   </ProfileBody>
+</ISO15745Profile>

@@ -1,0 +1,84 @@
+NOP
+// Specify coordinate system
+CCOOD CART
+
+// Define reference point
+SET P001(0) 500
+SET P001(1) 0
+SET P001(2) 100
+SET P001(3) 180
+SET P001(4) 0
+SET P001(5) 0
+
+// Ready
+MOVJ P000 VJ=100% PL=0
+
+LABEL *START
+CALL *PICK
+CALL *PLACE
+JUMP *START
+
+
+// ===== PICK =====
+LABEL *PICK
+// Enable camera to take pictures
+SET D005 1
+
+// Wait for the given coordinate value
+WAIT D005 = 0
+
+SET P002 P001
+
+// Get the coordinate value given by the vision to perform the operation
+// X: D001, Y: D002, Rz: D003
+ADD P002(0) D001
+ADD P002(1) D002
+ADD P002(5) D003
+
+// Move to the pick position
+MOVL P002 V=3000MM/S PL=0
+
+ADD P002(2) -100
+MOVL P002 V=3000MM/S PL=0
+
+// Close gripper
+TIMER T=0.5
+
+ADD P002 (2) 100
+MOVL P002 V=3000MM/S PL=0
+RET
+
+
+// ===== PLACE =====
+LABEL *PLACE
+// Check judgement 
+IF D000=1 THEN
+	// Part OK
+	SET P003 P001
+	ADD P003(1) -300
+	ADD P003(2) 200
+	MOVL P003 V=3000MM/S PL=0
+	ADD P003(2) -150
+	MOVL P003 V=3000MM/S PL=0
+	// Open gripper
+	TIMER T=0.5
+	ADD P003(2) 150
+	MOVL P003 V=3000MM/S PL=0
+
+// Part NOK
+ELSE
+	SET P004 P001
+	ADD P004(1) 300
+	ADD P004(2) 200
+	MOVL P004 V=3000MM/S PL=0
+	ADD P004(2) -150
+	MOVL P004 V=3000MM/S PL=0
+	// Open gripper
+	TIMER T=0.5
+	ADD P004(2) 150
+	MOVL P004 V=3000MM/S PL=0
+ENDIF
+
+MOVJ P000 VJ=100% PL=0
+RET
+END

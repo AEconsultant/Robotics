@@ -1,0 +1,64 @@
+<NotepadPlus>
+    <UserLang name="ELITE JBI" ext="JBI jbi" udlVersion="2.1">
+        <Settings>
+            <Global caseIgnored="no" allowFoldOfComments="no" foldCompact="no" forcePureLC="0" decimalSeparator="0" />
+            <Prefix Keywords1="no" Keywords2="no" Keywords3="no" Keywords4="no" Keywords5="no" Keywords6="yes" Keywords7="yes" Keywords8="yes" />
+        </Settings>
+        <KeywordLists>
+            <Keywords name="Comments">00// 01 02 03 04</Keywords>
+            <Keywords name="Numbers, prefix1"></Keywords>
+            <Keywords name="Numbers, prefix2"></Keywords>
+            <Keywords name="Numbers, extras1"></Keywords>
+            <Keywords name="Numbers, extras2"></Keywords>
+            <Keywords name="Numbers, suffix1"></Keywords>
+            <Keywords name="Numbers, suffix2"></Keywords>
+            <Keywords name="Numbers, range"></Keywords>
+            <Keywords name="Operators1">MM/S DEG/S % MM KG = | &amp; &lt;&gt; &gt; &lt; &gt;= &lt;=</Keywords>
+            <Keywords name="Operators2">2301</Keywords>
+            <Keywords name="Folders in code1, open"></Keywords>
+            <Keywords name="Folders in code1, middle"></Keywords>
+            <Keywords name="Folders in code1, close"></Keywords>
+            <Keywords name="Folders in code2, open"></Keywords>
+            <Keywords name="Folders in code2, middle"></Keywords>
+            <Keywords name="Folders in code2, close"></Keywords>
+            <Keywords name="Folders in comment, open"></Keywords>
+            <Keywords name="Folders in comment, middle"></Keywords>
+            <Keywords name="Folders in comment, close"></Keywords>
+            <Keywords name="Keywords1">CCOOD IF THEN ELSE ELSEIF ENDIF WHILE DO ENDWHILE BREAK CONTINUE JUMP CALL LABEL TIMER RET PAUSE WAIT MCWAIT</Keywords>
+            <Keywords name="Keywords2">DIN DOUT PULSE AOUT AIN MOUT MIN</Keywords>
+            <Keywords name="Keywords3">CLEAR INC DEC ADD SUB MUL DIV MOD AND OR NOT XOR MFRAME DIST SET SETJOINT SETPOSE GETPOS GETTOOLFRAME GETUSERFRAME TTINIT TTSTARTJOINT TTTARGETJOINT TTSTOP LOOKAHEAD GAIN POSETOJOINT JOINTTOPOSE POSEMUL SETMLFILE SAVEVARP TPWRITE SETPAYLOAD STARTLUA &#x000A;STOPLUA RESTARTLUA &#x000A;GETLUASTATE LOADML UNLOADML SETTOOLFRAME SETUSERFRAME SETTOOLNUMBER GETTOOLNUMBER GETTCPFORCE GETJOINTTORQUE GETACTUALTCP GETTARGETTCP GETACTUALJOINT GETTARGETJOINT STARTFORCEMODE ENDFORCEMODE ZEROFT TCPFORCEINBASE TCPFORCEINTOOL </Keywords>
+            <Keywords name="Keywords4">MOVJ MOVL MOVC MOVCA MOVML MOVDRAG VJ V VR AV AVR PL FPT ACC DEC R DIR DIST DRAGV UNTIL MOVEJ MOVEL MOVEC REF</Keywords>
+            <Keywords name="Keywords5">NOP END</Keywords>
+            <Keywords name="Keywords6">OFF ON CART JOINT USER# TOOL# JOB: INDEX CW CCW</Keywords>
+            <Keywords name="Keywords7">IN# IG# IGH# OT# OG# OGH# M# MG# MGH# AO# AI#</Keywords>
+            <Keywords name="Keywords8">B I D P LB LI LD LP C V</Keywords>
+            <Keywords name="Delimiters"></Keywords>
+        </KeywordLists>
+        <Styles>
+            <WordsStyle name="DEFAULT" fgColor="000000" bgColor="FFFFFF" fontStyle="0" nesting="0" />
+            <WordsStyle name="COMMENTS" fgColor="008000" bgColor="FFFFFF" fontName="15" fontStyle="0" nesting="0" />
+            <WordsStyle name="LINE COMMENTS" fgColor="008000" bgColor="FFFFFF" fontName="0" fontStyle="0" nesting="0" />
+            <WordsStyle name="NUMBERS" fgColor="FF00FF" bgColor="FFFFFF" fontName="-1" fontStyle="1" nesting="0" />
+            <WordsStyle name="KEYWORDS1" fgColor="0000FF" bgColor="FFFFFF" fontName="yes" fontStyle="1" nesting="0" />
+            <WordsStyle name="KEYWORDS2" fgColor="008080" bgColor="FFFFFF" fontName="&#x0140;&#x3DD2;&#x0191;" fontStyle="1" nesting="0" />
+            <WordsStyle name="KEYWORDS3" fgColor="FF8040" bgColor="FFFFFF" fontName="&#xA2C0;&#x3DD0;&#x0191;" fontStyle="1" nesting="0" />
+            <WordsStyle name="KEYWORDS4" fgColor="FF0000" bgColor="FFFFFF" fontName="1" fontStyle="1" nesting="0" />
+            <WordsStyle name="KEYWORDS5" fgColor="008040" bgColor="FFFFFF" fontStyle="1" nesting="0" />
+            <WordsStyle name="KEYWORDS6" fgColor="43CE2F" bgColor="FFFFFF" fontName="no" fontStyle="1" nesting="0" />
+            <WordsStyle name="KEYWORDS7" fgColor="FF0080" bgColor="FFFFFF" fontName="tory\Extensions\windows.fileTypeAssociation" fontStyle="1" nesting="0" />
+            <WordsStyle name="KEYWORDS8" fgColor="0080FF" bgColor="D5F5F9" fontStyle="3" nesting="0" />
+            <WordsStyle name="OPERATORS" fgColor="000000" bgColor="FFFFFF" fontName="\Microsoft\Windows\CurrentVersion\AppModel\PackageRepository\Extensions\windows.fileTypeAssociation" fontStyle="0" nesting="0" />
+            <WordsStyle name="FOLDER IN CODE1" fgColor="000000" bgColor="FFFFFF" fontName="&#x414E;K&#x7FFE;" fontStyle="0" nesting="0" />
+            <WordsStyle name="FOLDER IN CODE2" fgColor="000000" bgColor="FFFFFF" fontName="&#x7371;&#x6F6A;&#x2F00;&#x9000;disableAdvancedScrolling" fontStyle="0" nesting="0" />
+            <WordsStyle name="FOLDER IN COMMENT" fgColor="000000" bgColor="FFFFFF" fontName="&#x7354;&#x6F49;&#x2891;&#x8800;&#x8540;&#x37E4;&#x0191;" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS1" fgColor="000000" bgColor="FFFFFF" fontName="&#x732B;&#x6F2C;&#x217E;&#x8800;&#x8540;&#x37E4;&#x0191;" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS2" fgColor="000000" bgColor="FFFFFF" fontName="&#x73C0;&#x6FC5;&#x0C7E;&#x8800;&#x8540;&#x37E4;&#x0191;" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS3" fgColor="000000" bgColor="FFFFFF" fontName="&#x4A40;&#x3DD6;&#x0191;" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS4" fgColor="000000" bgColor="FFFFFF" fontName="no" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS5" fgColor="000000" bgColor="FFFFFF" fontName="&#xEB70;&#x3DDA;&#x0191;" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS6" fgColor="000000" bgColor="FFFFFF" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS7" fgColor="000000" bgColor="FFFFFF" fontName="no" fontStyle="0" nesting="0" />
+            <WordsStyle name="DELIMITERS8" fgColor="000000" bgColor="FFFFFF" fontName="&#x3E60;&#x3DEB;&#x0191;" fontStyle="0" nesting="0" />
+        </Styles>
+    </UserLang>
+</NotepadPlus>

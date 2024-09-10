@@ -1,0 +1,103 @@
+NOP
+// ==============================================================================
+// Palletizing: pick parts from position P1 and place them at a matrix with
+// vertex P2 
+// 12/2020
+// ==============================================================================
+// Align Gripper
+IF 1=0 THEN
+CALL JOB:Function_AlignGripper
+PAUSE
+ENDIF
+
+// 1. Select reference coordinates system: CART=base frame, TOOL#=tool frame, USER#=customized user frame
+CCOOD CART
+
+// 2. On the top menu bar:{Monitor}-->{Variable}-->{Var P}, activate P010,P011,P020,P021,P025 (turn on the green light)
+// 3. Teach P010 and P020: {Change}-->{Update Point}
+// P010 - Pick Position | P020 - Place Position
+SETJOINT P010 15.5057,-98.2996,130.6340,-121.1640,91.8781,-88.0583,0.0000,0.0000
+SETJOINT P020 -0.3089,-76.1575,107.4895,-121.9726,89.2280,-105.3870,0.0000,0.0000
+
+// 4. Set the matrix configuartion 
+// Set the number of objects in the X direction
+SET LI010 3    
+// Set the number of objects in the Y direction
+SET LI011 3
+// Set the number of objects in the Z direction
+SET LI012 3    
+// Set the gap distance of each slot in the X direction
+SET LD011 100
+// Set the gap distance of each slot in the Y direction
+SET LD012 100
+// Set the gap distance of each slot in the Z direction
+SET LD013 100
+
+// 5. Set the approach points LD010 and LD020:
+// LD010 - Height of how much the object need to be lift up from the slot when pick up
+SET LD010 100    
+// LD020 - Height of how much the object need to be lift up from the slot when place down
+SET LD020 100    
+
+// Initializations
+SET LI001 0
+SET LI002 0
+SET LI003 0
+SET LD001 0
+SET LD002 0
+SET LD003 0
+SET LP011 P010
+ADD LP011(2) LD010
+DOUT OT#(1) OFF
+PULSE OT#(2) T=0.5
+
+LABEL *C
+SET LI002 0
+
+LABEL *B
+SET LI001 0
+
+LABEL *A
+// Calculate offset distances 
+SET LD001 LD011
+SET LD002 LD012
+SET LD003 LD013 
+MUL LD001 LI001
+MUL LD002 LI002
+MUL LD003 LI003
+// Calculte approach offset and place offset position
+SET LP021 P020
+ADD LP021(0) LD001
+ADD LP021(1) LD002
+ADD LP021(2) LD003
+SET LP025 LP021
+ADD LP025(2) LD020
+
+// Move to pick position
+MOVJ LP011 VJ=100% PL=7
+MOVL P010 V=1000MM/S PL=0
+// Close gripper
+DOUT OT#(1) ON
+TIMER T=0.25 S
+MOVL LP011 V=1000MM/S PL=7
+
+// Move to place position (slot in the matrix)
+MOVJ LP025 VJ=100% PL=7
+MOVL LP021 V=1000MM/S PL=0
+// Open gripper
+DOUT OT#(1) OFF
+PULSE OT#(2) T=0.5
+MOVJ LP025 VJ=100% PL=7
+
+// Increase LI001 by one after each pick&place until the entire row (X direction) is finished
+INC LI001         
+JUMP *A IF LI001<LI010  
+
+// Increase LI002 by one after each row (Y direction) is finished 
+INC LI002            
+JUMP *B IF LI002<LI011
+
+// Increase LI003 by one after each row (Z direction) is finished  
+INC LI003            
+JUMP *B IF LI003<LI012
+END

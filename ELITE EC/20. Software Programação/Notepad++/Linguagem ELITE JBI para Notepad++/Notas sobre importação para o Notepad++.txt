@@ -1,0 +1,8 @@
+
+Para importar o fciheiro de linguagem "EQN_ELITE_JBI.xml” para o Notepad++, por favor:
+1. Abrir Notepad++;
+2. Selecionar “Language > User Defined Language > Define your language > Import”;
+3. Selecionar o ficheiro “EQN_ELITE_JBI.xml”; 
+4. Fechar a janela de linguagem e reiniciar o Notepad++.
+Após isso, sempre que tentar abrir um ficheiro com extensão “.jbi”, o software irá automaticamente 
+reconhecê-lo como sendo um programa ELITE JBI e destacar a sintaxe das instruções. 

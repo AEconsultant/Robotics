@@ -1,0 +1,18 @@
+NOP
+// Set user frame 0
+CCOOD USER#(0)
+// Set Positions
+// home
+SETJOINT P000 -13.9881,-105.1671,99.2965,-84.1315,89.9975,107.1782
+// zone approach
+SETJOINT P001 53.0806,-105.1581,99.3308,-84.1751,89.9969,107.2577
+// pick start
+SETJOINT P003 60.2606,-85.2061,124.7735,-162.7169,77.1383,51.4310
+// near pick approach
+SET P002 P003
+// Use USER#(4) as picking frame
+CCOOD USER#(4)
+// set near pick aproach 100 mm above pick start in the picking frame
+ADD P002(2) 100
+CCOOD USER#(0)
+END

@@ -1,0 +1,18 @@
+NOP
+// call JOB to set positions (go to expStackPickSetPos.jbi)
+CALL JOB:expStackPickSetPos
+// set loop counter to 0
+SET LI000 0
+//go home
+MOVJ P000 VJ=100% CR=50.0MM ACC=100 DEC=100
+// loop until 5 picks
+WHILE LI000 <5 DO
+//go appro
+MOVJ P001 VJ=100% CR=50.0MM ACC=100 DEC=100
+// call JOB to pick (go to expStackPickPicking.jbi)
+CALL JOB:expStackPickPicking
+// increment picking count
+INC LI000
+//
+ENDWHILE
+END

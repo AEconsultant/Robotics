@@ -1,0 +1,18 @@
+NOP
+// set distance between picks
+SET LD001 -50
+//
+CCOOD USER#(4)
+//pickstart
+MOVJ P002 VJ=100% CR=50.0MM ACC=100 DEC=100
+//pick
+MOVL P003 V=500.0MM/S CR=50.0MM ACC=10 DEC=50
+// timer to simulate griping
+TIMER T=1.0
+// move away to appro position
+MOVL P002 V=500.0MM/S CR=50.0MM ACC=10 DEC=50
+// ofset gripping position in the Z axis (2)
+ADD P003(2) LD001
+//
+CCOOD USER#(0)
+END

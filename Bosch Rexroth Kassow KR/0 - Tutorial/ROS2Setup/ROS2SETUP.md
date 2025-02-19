@@ -1,6 +1,5 @@
 # Instalation and setup of ROS2 to command Kassow Robots
 
-
 ![1](images/cover1.png)
 
 ### Tested version:
@@ -23,13 +22,27 @@
 
 ![alt text](images/image-2.png)
 
-- Configure machine specs (presented sepecs not extensively tested)
+- Configure machine specs
 
 ![alt text](images/image-3.png)
+
+- After the VM is ready, shut it down to configure the network (this can be done later but is better to complete rigth away)
+
+    - Setup one adapter to bridge to the laptop host ethernet port:
+
+    ![alt text](images/ethernetBridge.png)
+
+    - And another adaptor to bridge with the wifi devices:
+
+    ![alt text](images/wifiBridge.png)
 
 - Start the VM and log in:
 
 ![alt text](images/image-4.png)
+
+- Configure a static IP on the VM ethernet interface:
+
+![alt text](images/vmnetwork.png)
 
 - Open terminal:
 
@@ -94,12 +107,6 @@ and add bellow:
 
     sudo git clone https://gitlab.com/kassowrobots/orange-ros2.git
 
-
-- In the instalation, got ament* package related error. 
-    - if ament error:
-    
-    su
-
     colcon build
 
 - Finaly
@@ -112,14 +119,6 @@ and add bellow:
 - Setup host (windows laptop) IP:
 
 ![6](images/mswindowsip.png)
-
-- Setup VM IP:
-
-![alt text](image-14.png)
-
-- Make sure VM network is configured to access host network and ethernet port:
-
-![alt text](images/vmnetwork.png)
 
 ## 
 ## Kassow robot Setup
